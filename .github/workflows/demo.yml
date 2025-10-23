@@ -1,4 +1,4 @@
-name: 🚀 Live Demo Deployment
+name: Live Demo Deployment
 
 on:
   push:
@@ -11,30 +11,25 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: 🎯 Checkout Code
+    - name: Checkout Code
       uses: actions/checkout@v4
       
-    - name: 🐳 Build Demo Environment
+    - name: Build Demo Environment
       run: |
-        echo "🚀 Building the most advanced RAG system on the planet..."
+        echo "Building the most advanced RAG system on the planet..."
         docker-compose up -d --build
         
-    - name: 🧠 Initialize AI Brain
+    - name: Initialize AI Brain
       run: |
-        echo "🧠 Initializing the AI brain with sample data..."
+        echo "Initializing the AI brain with sample data..."
         python scripts/setup_research_env.py
         
-    - name: 🎬 Run Live Demo
+    - name: Run Live Demo
       run: |
-        echo "🎬 Starting live demo of the revolutionary RAG system..."
+        echo "Starting live demo of the revolutionary RAG system..."
         python scripts/demo.py
         
-    - name: 📊 Generate Performance Report
+    - name: Generate Performance Report
       run: |
-        echo "📊 Generating mind-blowing performance metrics..."
+        echo "Generating mind-blowing performance metrics..."
         python scripts/generate_report.py
-        
-    - name: 🎉 Deploy to Demo Environment
-      run: |
-        echo "🎉 Deploying to demo environment for the world to see..."
-        # Deploy to demo environment
