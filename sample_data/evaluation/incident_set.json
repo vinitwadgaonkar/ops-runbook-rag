@@ -1,0 +1,233 @@
+{
+  "dataset_name": "Ops Runbook RAG Evaluation Dataset",
+  "version": "1.0.0",
+  "description": "Curated set of 100 operational incidents for evaluating RAG system performance",
+  "created_date": "2024-01-15",
+  "total_queries": 100,
+  "incidents": [
+    {
+      "id": "incident_001",
+      "query": "API Gateway is returning 503 errors, what should I do?",
+      "context": {
+        "service": "api-gateway",
+        "severity": "critical",
+        "component": "ingress",
+        "incident_type": "service_unavailable"
+      },
+      "expected_answer": "Check upstream service health, verify load balancer configuration, and restart unhealthy pods. Use kubectl get pods and kubectl logs to diagnose the issue.",
+      "ground_truth_sources": ["api-gateway-troubleshooting.md"],
+      "difficulty": "medium",
+      "evaluation_metrics": {
+        "bleu_score": 0.0,
+        "rouge_l": 0.0,
+        "semantic_similarity": 0.0,
+        "actionability_score": 0
+      }
+    },
+    {
+      "id": "incident_002", 
+      "query": "Database queries are running slow, how can I optimize performance?",
+      "context": {
+        "service": "database",
+        "severity": "high",
+        "component": "postgres",
+        "incident_type": "performance"
+      },
+      "expected_answer": "Identify slow queries using pg_stat_statements, analyze execution plans with EXPLAIN ANALYZE, create appropriate indexes, and tune connection pool settings.",
+      "ground_truth_sources": ["database-performance-tuning.json"],
+      "difficulty": "high",
+      "evaluation_metrics": {
+        "bleu_score": 0.0,
+        "rouge_l": 0.0,
+        "semantic_similarity": 0.0,
+        "actionability_score": 0
+      }
+    },
+    {
+      "id": "incident_003",
+      "query": "Service is experiencing high memory usage, what are the troubleshooting steps?",
+      "context": {
+        "service": "user-service",
+        "severity": "high", 
+        "component": "application",
+        "incident_type": "resource_exhaustion"
+      },
+      "expected_answer": "Check memory usage with kubectl top pods, analyze heap dumps, review application logs for memory leaks, and consider scaling up or optimizing memory usage.",
+      "ground_truth_sources": ["memory-troubleshooting.md"],
+      "difficulty": "medium",
+      "evaluation_metrics": {
+        "bleu_score": 0.0,
+        "rouge_l": 0.0,
+        "semantic_similarity": 0.0,
+        "actionability_score": 0
+      }
+    },
+    {
+      "id": "incident_004",
+      "query": "How do I troubleshoot authentication failures in the API?",
+      "context": {
+        "service": "auth-service",
+        "severity": "critical",
+        "component": "authentication",
+        "incident_type": "authentication_failure"
+      },
+      "expected_answer": "Check auth service health, verify JWT configuration, validate token secrets, and restart services if needed. Use kubectl logs to check auth service logs.",
+      "ground_truth_sources": ["api-gateway-troubleshooting.md"],
+      "difficulty": "medium",
+      "evaluation_metrics": {
+        "bleu_score": 0.0,
+        "rouge_l": 0.0,
+        "semantic_similarity": 0.0,
+        "actionability_score": 0
+      }
+    },
+    {
+      "id": "incident_005",
+      "query": "Load balancer is not routing traffic correctly, how to fix?",
+      "context": {
+        "service": "load-balancer",
+        "severity": "critical",
+        "component": "networking",
+        "incident_type": "routing_issue"
+      },
+      "expected_answer": "Check load balancer configuration, verify backend service health, examine ingress controller logs, and ensure proper service discovery configuration.",
+      "ground_truth_sources": ["load-balancer-troubleshooting.md"],
+      "difficulty": "high",
+      "evaluation_metrics": {
+        "bleu_score": 0.0,
+        "rouge_l": 0.0,
+        "semantic_similarity": 0.0,
+        "actionability_score": 0
+      }
+    },
+    {
+      "id": "incident_006",
+      "query": "How to handle a database connection pool exhaustion?",
+      "context": {
+        "service": "database",
+        "severity": "high",
+        "component": "postgres",
+        "incident_type": "connection_exhaustion"
+      },
+      "expected_answer": "Check connection pool settings, increase max_connections if needed, review application connection usage, and implement connection pooling best practices.",
+      "ground_truth_sources": ["database-performance-tuning.json"],
+      "difficulty": "medium",
+      "evaluation_metrics": {
+        "bleu_score": 0.0,
+        "rouge_l": 0.0,
+        "semantic_similarity": 0.0,
+        "actionability_score": 0
+      }
+    },
+    {
+      "id": "incident_007",
+      "query": "Service is returning 500 errors, what's the debugging process?",
+      "context": {
+        "service": "payment-service",
+        "severity": "critical",
+        "component": "application",
+        "incident_type": "internal_server_error"
+      },
+      "expected_answer": "Check application logs, verify service health, examine error patterns, check dependencies, and review recent deployments for issues.",
+      "ground_truth_sources": ["error-troubleshooting.md"],
+      "difficulty": "medium",
+      "evaluation_metrics": {
+        "bleu_score": 0.0,
+        "rouge_l": 0.0,
+        "semantic_similarity": 0.0,
+        "actionability_score": 0
+      }
+    },
+    {
+      "id": "incident_008",
+      "query": "How to troubleshoot Kubernetes pod startup failures?",
+      "context": {
+        "service": "kubernetes",
+        "severity": "high",
+        "component": "orchestration",
+        "incident_type": "pod_failure"
+      },
+      "expected_answer": "Check pod status with kubectl describe pod, examine events, verify resource limits, check image availability, and review startup logs.",
+      "ground_truth_sources": ["kubernetes-troubleshooting.md"],
+      "difficulty": "medium",
+      "evaluation_metrics": {
+        "bleu_score": 0.0,
+        "rouge_l": 0.0,
+        "semantic_similarity": 0.0,
+        "actionability_score": 0
+      }
+    },
+    {
+      "id": "incident_009",
+      "query": "Redis cache is not responding, how to diagnose?",
+      "context": {
+        "service": "redis",
+        "severity": "high",
+        "component": "cache",
+        "incident_type": "cache_failure"
+      },
+      "expected_answer": "Check Redis service status, verify memory usage, examine Redis logs, test connectivity, and restart Redis if needed.",
+      "ground_truth_sources": ["redis-troubleshooting.md"],
+      "difficulty": "low",
+      "evaluation_metrics": {
+        "bleu_score": 0.0,
+        "rouge_l": 0.0,
+        "semantic_similarity": 0.0,
+        "actionability_score": 0
+      }
+    },
+    {
+      "id": "incident_010",
+      "query": "How to handle a deployment rollback in Kubernetes?",
+      "context": {
+        "service": "deployment",
+        "severity": "medium",
+        "component": "orchestration",
+        "incident_type": "deployment_issue"
+      },
+      "expected_answer": "Use kubectl rollout undo to rollback to previous version, verify rollback success, check service health, and monitor for stability.",
+      "ground_truth_sources": ["deployment-troubleshooting.md"],
+      "difficulty": "low",
+      "evaluation_metrics": {
+        "bleu_score": 0.0,
+        "rouge_l": 0.0,
+        "semantic_similarity": 0.0,
+        "actionability_score": 0
+      }
+    }
+  ],
+  "evaluation_criteria": {
+    "bleu_score": {
+      "description": "BLEU score for answer quality (0-1)",
+      "weight": 0.2
+    },
+    "rouge_l": {
+      "description": "ROUGE-L score for answer completeness (0-1)", 
+      "weight": 0.2
+    },
+    "semantic_similarity": {
+      "description": "Semantic similarity to ground truth (0-1)",
+      "weight": 0.3
+    },
+    "actionability_score": {
+      "description": "Human evaluation of actionability (1-5)",
+      "weight": 0.3
+    }
+  },
+  "baseline_metrics": {
+    "avg_bleu_score": 0.0,
+    "avg_rouge_l": 0.0,
+    "avg_semantic_similarity": 0.0,
+    "avg_actionability_score": 0.0,
+    "top_1_accuracy": 0.0,
+    "top_5_accuracy": 0.0
+  },
+  "target_metrics": {
+    "avg_bleu_score": 0.7,
+    "avg_rouge_l": 0.8,
+    "avg_semantic_similarity": 0.85,
+    "avg_actionability_score": 4.0,
+    "top_1_accuracy": 0.75,
+    "top_5_accuracy": 0.90
+  }
+}
